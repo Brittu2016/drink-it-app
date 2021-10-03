@@ -1,0 +1,20 @@
+.full-width {
+  width: 90%;
+}
+.searchCard{
+  width: 90%;
+}
+.main-div{
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.margin-button {
+  margin: 0 0.5rem 0 0.5rem !important;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}

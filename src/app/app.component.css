@@ -1,0 +1,9 @@
+.bottom{
+    position: fixed;
+    bottom: 0;
+    align-content: center;
+    justify-content: center;
+}
+.footerText{
+  font-size: small;
+}

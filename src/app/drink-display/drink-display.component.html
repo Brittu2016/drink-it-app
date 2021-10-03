@@ -1,0 +1,55 @@
+<div *ngIf= "showTable">
+  <table class="drink-table">
+     <thead>
+        <tr>
+           <th>Nome</th>
+           <th>
+              <mat-form-field appearance="fill">
+                 <mat-label>Alcolico</mat-label>
+                 <mat-select [disabled]= "handleChoice()" [(value)]="alcoholicChoice">
+                 <mat-option [value]="alcoholicType" *ngFor="let alcoholicType of alcoholicTypes">{{alcoholicType}}</mat-option>
+                 </mat-select>
+              </mat-form-field>
+           </th>
+           <th>
+              <mat-form-field appearance="fill">
+                 <mat-label>Categorie</mat-label>
+                 <mat-select [disabled]= "handleChoice()" [(value)]="selectedCategory">
+                 <mat-option [value]="category" *ngFor="let category of categories">{{category}}</mat-option>
+                 </mat-select>
+              </mat-form-field>
+           </th>
+           <th>
+              <mat-form-field appearance="fill">
+                 <mat-label>Preferiti</mat-label>
+                 <mat-select [(value)]="selectedIsFavourite">
+                 <mat-option [value]="isFavourite" *ngFor="let isFavourite of isFavourites">{{isFavourite}}</mat-option>
+                 </mat-select>
+              </mat-form-field>
+           </th>
+           <th></th>
+        </tr>
+     </thead>
+     <tbody>
+        <tr *ngFor="let cocktail of filteredCocktails()">
+           <td class ="pointer" (click)="openDetails(cocktail)">{{cocktail.strDrink}} </td>
+           <td>
+              <mat-icon>
+                 {{getAlcoholiIcon(cocktail)}}
+              </mat-icon>
+           </td>
+           <td>{{cocktail.strCategory}}</td>
+           <td>
+              <mat-icon id="{{cocktail.idDrink}}" class = "{{cocktail.idDrink}} heart" (click) = "switchFavourite($event.target, cocktail)">
+                 {{getIcon(cocktail)}}
+              </mat-icon>
+           </td>
+           <td>
+              <mat-icon (click)="openQRCode(cocktail)">
+                 qr_code_2
+              </mat-icon>
+           </td>
+        </tr>
+     </tbody>
+  </table>
+</div>

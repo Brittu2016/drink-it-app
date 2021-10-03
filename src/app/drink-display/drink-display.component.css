@@ -1,0 +1,43 @@
+.drink-table{
+  border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: Montserrat;
+    min-width: 200px;
+    box-shadow: 0 0 20px #00000026;
+    margin: auto;
+    width: calc(100% - 100px);
+}
+
+.drink-table thead tr {
+  height: 50px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.drink-table th,
+.drink-table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.drink-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.drink-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.selectContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.singleSelect{
+  margin: 0 10% 0 0;
+}
+
+.pointer {
+  cursor: pointer;
+}
